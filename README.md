@@ -93,11 +93,10 @@ PUT http://localhost:5000/carro
 
  DELETE http://localhost:5000/carro/2
    
-#### exemplo de request.body, Informando o id 
+#### exemplo de request.body
 ```
-  {
-    "id": 1    
-  }
+  true
+  
  ``` 
 
   <hr/>
