@@ -1,4 +1,4 @@
-# GESTAO-DE-TREINAMENTO
+# TRILHA .NET
 
 ---
 
@@ -16,13 +16,13 @@
 
 ## 💻 Projeto
 
-Um sistema Desktop para gerenciar eventos de treinamento de pessoas 🚀
+ Crud Web Api com Postgres 🚀
 
 ---
 
 # :construction_worker: Instalação
 
-**Você precisa instalar o [Visual Studio 2019](https://visualstudio.microsoft.com/pt-br/vs/community/), [Postgres](https://www.postgresql.org/download/),[dotnet 5.0](https://dotnet.microsoft.com/download/dotnet/5.0) e o [Pgadmin](https://www.pgadmin.org/download/) e em seguida, para clonar o projeto via HTTPS, execute este comando :**
+**Você precisa instalar o [Visual Studio 2019](https://visualstudio.microsoft.com/pt-br/vs/community/), [Postgres](https://www.postgresql.org/download/), [dotnet 5.0](https://dotnet.microsoft.com/download/dotnet/5.0) e o [Pgadmin](https://www.pgadmin.org/download/) e em seguida, para clonar o projeto via HTTPS, execute este comando :**
 
 ```
 git clone https://github.com/SilvaTs/TrilhaEspecificaAula2.git
