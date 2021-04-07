@@ -1,5 +1,11 @@
+using Aula2.Adapter;
+using Aula2.Bordas.Adapter;
+using Aula2.Bordas.Repositorios;
 using Aula2.Context;
+using Aula2.DTO.Carro.AtualizarCarro;
+using Aula2.Repositorios;
 using Aula2.Services;
+using Aula2.UseCase;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -27,6 +33,15 @@ namespace Aula2
            (Configuration.GetConnectionString("urlDaniel")));
 
             services.AddScoped<ICarroService, CarroService>();
+
+            services.AddScoped<IAdicionarCarroUseCase, AdicionarCarroUseCase>();
+            services.AddScoped<IAtualizarCarroUseCase, AtualizarCarroUseCase>();
+            services.AddScoped<IRemoverCarroUseCase, RemoverCarroUseCase>();
+            services.AddScoped<IRetornarListadeCarrosUseCase, RetornarListadeCarrosUseCase>();
+            services.AddScoped<IRetornarCarrosPorIdUseCase, RetornarCarrosPorIdUseCase>();
+
+            services.AddScoped<IRepositorioCarros, RepositorioCarros>();
+            services.AddScoped<IAdicionarCarroAdapter, AdicionarCarroAdapter>();
 
             services.AddControllers();
         }
