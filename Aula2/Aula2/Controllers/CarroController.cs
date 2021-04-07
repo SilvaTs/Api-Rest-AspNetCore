@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Aula2.Entities;
+using Aula2.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Aula2.Controllers
 {
@@ -11,29 +9,46 @@ namespace Aula2.Controllers
     [Route("[controller]")]
     public class CarroController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
 
         private readonly ILogger<CarroController> _logger;
+        private readonly ICarroService _carro;
 
-        public CarroController(ILogger<CarroController> logger)
+        public CarroController(ILogger<CarroController> logger, ICarroService carro)
         {
             _logger = logger;
+            _carro = carro;
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public IActionResult TodosCarros()
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            return Ok(_carro.RetonarListaCarro());
         }
+
+        [HttpGet("{id}")]
+        public IActionResult carro(int id)
+        {
+            return Ok(_carro.RetornarCarroPorId(id));
+        }
+
+        [HttpPost]
+        public IActionResult produtoAdd([FromBody] Carro novoCarro)
+        {
+            return Ok(_carro.AdicionarCarro(novoCarro));
+        }
+
+        [HttpPut]
+        public IActionResult carroUpdate([FromBody] Carro novoCarro)
+        {
+            return Ok(_carro.AtualizarCarro(novoCarro));
+        }
+
+
+        [HttpDelete("{id}")]
+        public IActionResult carroDelete(int id)
+        {
+            return Ok(_carro.DeletarCarro(id));
+        }
+
     }
 }
