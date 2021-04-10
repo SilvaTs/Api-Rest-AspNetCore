@@ -32,7 +32,7 @@ namespace Aula2.Controllers
         }
 
         [HttpPost]
-        public IActionResult produtoAdd([FromBody] Carro novoCarro)
+        public IActionResult carroAdd([FromBody] Carro novoCarro)
         {
             return Ok(_carro.AdicionarCarro(novoCarro));
         }
