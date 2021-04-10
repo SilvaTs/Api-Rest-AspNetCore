@@ -93,11 +93,10 @@ PUT http://localhost:5000/carro
 
  DELETE http://localhost:5000/carro/2
    
-#### exemplo de request.body, Informando o id 
+#### exemplo do request.response :
 ```
-  {
-    "id": 1    
-  }
+  true
+  
  ``` 
 
   <hr/>
@@ -106,7 +105,7 @@ PUT http://localhost:5000/carro
 
 GET http://localhost:5000/carro/2
    
-#### exemplo de response: 
+#### exemplo do request.response :
 ```
   {
     "id": 2,
@@ -120,7 +119,7 @@ GET http://localhost:5000/carro/2
  ### Listar todos Carros
  GET http://localhost:5000/carro/
    
-#### exemplo de response: 
+#### exemplo do request.response :
 ```
  [
   {
