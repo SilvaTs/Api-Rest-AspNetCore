@@ -1,7 +1,7 @@
 ﻿using Aula2.Bordas.Repositorios;
 using Aula2.Context;
 using Aula2.Entities;
-
+using System.Linq;
 
 namespace Aula2.Repositorios
 {
@@ -19,6 +19,17 @@ namespace Aula2.Repositorios
             _local.carro.Add(request);
             _local.SaveChanges();
             return request.id;
+        }
+
+        public void Remove(int id)
+        {
+            var obj = _local.carro.Where(d => d.id == id).FirstOrDefault();
+            if (obj == null)
+            {
+                throw new System.Exception();
+            }
+            _local.carro.Remove(obj);
+            _local.SaveChanges();
         }
     }
 }

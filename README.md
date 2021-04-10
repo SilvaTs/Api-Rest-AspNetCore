@@ -95,7 +95,7 @@ PUT http://localhost:5000/carro
    
 #### exemplo de request.response
 ```
-  true
+   "msg": "Removido com sucesso"
   
  ``` 
 

@@ -7,5 +7,6 @@ namespace Aula2.Bordas.Repositorios
     public interface IRepositorioCarros
     {
         public int Add(Carro request);
+        public void Remove(int id);
     }
 }
