@@ -56,6 +56,7 @@ dotnet ef database update
 - [x] listar todos carros
 - [x] Persistência de dados
 - [x] Teste no postman
+- [x] Testes Unitários
 
 ---
 
