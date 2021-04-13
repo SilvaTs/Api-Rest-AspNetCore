@@ -4,6 +4,6 @@ namespace Aula2.UseCase
 {
     public interface IRetornarListadeCarrosUseCase
     {
-        RetornarListadeCarrosResponse Executar(RetornarListadeCarrosRequest request);
+        RetornarListadeCarrosResponse Executar();
     }
 }

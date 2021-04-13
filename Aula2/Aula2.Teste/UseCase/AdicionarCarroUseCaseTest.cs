@@ -40,7 +40,7 @@ namespace Aula2.Teste.UseCase
             response.msg = "Carro adicionado com sucesso";
             response.id = carro.id;
 
-            _repositorioCarros.Setup(repositorio => repositorio.Add(carro)).Returns(carro.id);
+            _repositorioCarros.Setup(repositorio => repositorio.Add(carro));
             _adicionarCarrosAdapter.Setup(adapter => adapter.converterRequestParaCarro(request)).Returns(carro);
 
 

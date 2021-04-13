@@ -1,6 +1,7 @@
 using Aula2.Adapter;
 using Aula2.Bordas.Adapter;
 using Aula2.Bordas.Repositorios;
+using Aula2.Bordas.UseCase;
 using Aula2.Context;
 using Aula2.DTO.Carro.AtualizarCarro;
 using Aula2.Repositorios;
@@ -32,6 +33,7 @@ namespace Aula2
             services.AddEntityFrameworkNpgsql().AddDbContext<LocalDbContext>(opt => opt.UseNpgsql
            (Configuration.GetConnectionString("urlDaniel")));
 
+
             services.AddScoped<ICarroService, CarroService>();
 
             services.AddScoped<IAdicionarCarroUseCase, AdicionarCarroUseCase>();
@@ -42,6 +44,8 @@ namespace Aula2
 
             services.AddScoped<IRepositorioCarros, RepositorioCarros>();
             services.AddScoped<IAdicionarCarroAdapter, AdicionarCarroAdapter>();
+            services.AddScoped<IAtualizarCarroAdapter, AtualizarCarroAdapter>();
+
 
             services.AddControllers();
         }

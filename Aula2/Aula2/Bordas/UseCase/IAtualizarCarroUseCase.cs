@@ -1,7 +1,7 @@
 ﻿using Aula2.DTO.Carro.AtualizarCarro;
 
 
-namespace Aula2.UseCase
+namespace Aula2.Bordas.UseCase
 {
     public interface IAtualizarCarroUseCase
     {

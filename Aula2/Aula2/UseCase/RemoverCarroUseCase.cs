@@ -26,7 +26,8 @@ namespace Aula2.UseCase
             }
             catch (Exception e)
             {
-                throw new System.Exception(e.Message);
+                response.msg = "Erro ao Remover";
+                return response;
             }
         }
     }

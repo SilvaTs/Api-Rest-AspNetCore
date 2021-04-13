@@ -1,8 +1,7 @@
 ﻿using Aula2.Bordas.Adapter;
 using Aula2.Bordas.Repositorios;
+using Aula2.Bordas.UseCase;
 using Aula2.DTO.Carro.AdicionarCarro;
-using System;
-
 
 namespace Aula2.UseCase
 {
@@ -30,10 +29,9 @@ namespace Aula2.UseCase
                     return response;
                 }
 
-                var produtoAdicionar = _adapter.converterRequestParaCarro(request);
+                var produtoAdicionar = _adapter.ConverterRequestParaCarro(request);
                 _repositorioProdutos.Add(produtoAdicionar);
-                response.msg = "Adicionado com sucesso";
-                response.id = produtoAdicionar.id;
+                response.msg = "Adicionado com sucesso";            
                 return response;
             }
             catch

@@ -1,6 +1,7 @@
 ﻿using Aula2.Bordas.Repositorios;
 using Aula2.Context;
 using Aula2.Entities;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Aula2.Repositorios
@@ -14,11 +15,11 @@ namespace Aula2.Repositorios
             _local = local;
         }
 
-        public int Add(Carro request)
+        public void Add(Carro request)
         {
             _local.carro.Add(request);
             _local.SaveChanges();
-            return request.id;
+          
         }
 
         public void Remove(int id)
@@ -31,5 +32,30 @@ namespace Aula2.Repositorios
             _local.carro.Remove(obj);
             _local.SaveChanges();
         }
+
+        public void Update(Carro request)
+        {
+            _local.carro.Attach(request);
+            _local.Entry(request).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _local.SaveChanges();
+        }
+        public Carro RetornaPorId(int id)
+        {
+            foreach (Carro carros in _local.carro)
+            {
+                if (carros.id.Equals(id))
+                {
+                    return carros;
+                }
+            }
+            return null;
+        }
+
+        public List<Carro> RetornarListaCarros()
+        {
+            return _local.carro.ToList();
+
+        }
+
     }
 }

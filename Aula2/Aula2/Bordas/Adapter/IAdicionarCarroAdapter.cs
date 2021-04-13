@@ -6,6 +6,6 @@ namespace Aula2.Bordas.Adapter
 {
     public interface IAdicionarCarroAdapter
     {
-        public Carro converterRequestParaCarro(AdicionarCarroRequest request);
+        public Carro ConverterRequestParaCarro(AdicionarCarroRequest request);
     }
 }

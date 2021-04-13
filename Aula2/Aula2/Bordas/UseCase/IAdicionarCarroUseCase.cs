@@ -1,7 +1,7 @@
 ﻿using Aula2.DTO.Carro.AdicionarCarro;
 
 
-namespace Aula2.UseCase
+namespace Aula2.Bordas.UseCase
 {
     public interface IAdicionarCarroUseCase
     {
